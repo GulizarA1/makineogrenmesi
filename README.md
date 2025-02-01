@@ -57,10 +57,13 @@ df.to_csv("bbc_tech_headlines.csv", index=False)
 
 
 #### 3. Makine Öğrenmesi Modelleri:
+
 Veriler, TfidfVectorizer ile sayısal vektörlere dönüştürüldü ve üç farklı model eğitildi:
 
 **Naive Bayes (MultinomialNB)**
+
 **Lojistik Regresyon (LogisticRegression)**
+
 **Random Forest (RandomForestClassifier)**
 
 ```
@@ -82,6 +85,7 @@ for name, model in models.items():
 ```
 
 #### 4. Sonuçları Karşılaştırma ve Görselleştirme:
+
 Model doğrulukları karşılaştırıldı ve Confusion Matrix görselleştirildi.
 
 ```
@@ -95,24 +99,41 @@ plt.show()
 ```
 
 #### 5. Sonuçlar:
+
 Projede elde edilen makine öğrenmesi modellerinin performans sonuçları model_performance.csv ve model_comparison.pdf dosyalarında sunulmuştur. 
 En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
 
 
 #### 6. Kullanım:
+
+
  **1.Depoyu klonlayın:**
-   ``` git clone https://github.com/yourusername/your-repository.git```
+   ``` 
+   git clone https://github.com/yourusername/your-repository.git
+   ```
+   
  **2.Gereksinimleri yükleyin:**
-    ```pip install -r requirements.txt```
+    ```
+    pip install -r requirements.txt
+    ```
+    
  **3.Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:**
-    ```python scripts/scrape_data.py```
+    ```
+    python scripts/scrape_data.py
+    ```
+    
  **4.Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:**
-    ```python scripts/model.py```
+    ```
+    python scripts/model.py
+    ```
 
 
 #### 7.Video Açıklama:
+
 Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz:
+
 **[Video Açıklama Linki]**
+
 
 ## Lisans:
 **Bu proje MIT Lisansı altında lisanslanmıştır.**
