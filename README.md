@@ -37,17 +37,14 @@ response = requests.get(URL, headers=headers)
 soup = BeautifulSoup(response.text, "html.parser")
 headlines = [headline.text.strip() for headline in soup.find_all("h3")]
 
-#### 2. Veri Temizleme:
-Kazınan veriler aşağıdaki işlemlerle temizlendi:
 
-Metinler küçük harfe çevrildi.
-Özel karakterler ve sayılar kaldırıldı.
-Gereksiz kelimeler (stopwords) temizlendi.
-Kod Örneği:
+### **2. Veri Temizleme**  
+Kazınan veriler, aşağıdaki işlemlerle temizlendi:
+- **Metinler küçük harfe çevrildi.**
+- **Özel karakterler ve sayılar kaldırıldı.**
+- **Gereksiz kelimeler (stopwords) temizlendi.**
 
-python
-Kopyala
-Düzenle
+```python
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'[^a-zA-Z\s]', '', text)
@@ -57,6 +54,9 @@ def clean_text(text):
 cleaned_headlines = [clean_text(headline) for headline in headlines]
 df = pd.DataFrame(cleaned_headlines, columns=["Headline"])
 df.to_csv("bbc_tech_headlines.csv", index=False)
+
+
+
 3. Makine Öğrenmesi Modelleri:
 Veriler, TfidfVectorizer ile sayısal vektörlere dönüştürüldü ve üç farklı model eğitildi:
 
@@ -81,48 +81,43 @@ for name, model in models.items():
     print(f"{name} Model Accuracy: {accuracy:.4f}")
     print(classification_report(y_test, y_pred))
 
+
 4. Sonuçları Karşılaştırma ve Görselleştirme:
 Model doğrulukları karşılaştırıldı ve Confusion Matrix görselleştirildi.
 
 Kod Örneği:
 
-python
-Kopyala
-Düzenle
 plt.figure(figsize=(8, 5))
 plt.bar(results.keys(), results.values(), color=["blue", "green", "red"])
 plt.xlabel("Model")
 plt.ylabel("Doğruluk Oranı")
 plt.title("Farklı Makine Öğrenmesi Modellerinin Karşılaştırılması")
 plt.show()
+
+
 5. Sonuçlar:
 Projede elde edilen makine öğrenmesi modellerinin performans sonuçları model_performance.csv ve model_comparison.pdf dosyalarında sunulmuştur. En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
 
 6. Kullanım:
-Depoyu klonlayın:
-bash
-Kopyala
-Düzenle
-git clone https://github.com/yourusername/your-repository.git
-Gereksinimleri yükleyin:
-bash
-Kopyala
-Düzenle
-pip install -r requirements.txt
-Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:
-bash
-Kopyala
-Düzenle
-python scripts/scrape_data.py
-Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:
-bash
-Kopyala
-Düzenle
-python scripts/model.py
+ 1.Depoyu klonlayın:
+    git clone https://github.com/yourusername/your-repository.git
+ 2.Gereksinimleri yükleyin:
+    pip install -r requirements.txt
+ 3.Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:
+    python scripts/scrape_data.py
+ 4.Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:
+    python scripts/model.py
 
-7. Video Açıklama:
-Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz: [Video Açıklama Linki]
+
+7.Video Açıklama:
+Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz:
+[Video Açıklama Linki]
 
 Lisans:
 Bu proje MIT Lisansı altında lisanslanmıştır.
+
+
+
+
+
 
