@@ -36,9 +36,9 @@ headers = {"User-Agent": "Mozilla/5.0"}
 response = requests.get(URL, headers=headers)
 soup = BeautifulSoup(response.text, "html.parser")
 headlines = [headline.text.strip() for headline in soup.find_all("h3")]
+```
 
-
-**2. Veri Temizleme**  
+### 2. Veri Temizleme
 Kazınan veriler, aşağıdaki işlemlerle temizlendi:
 - **Metinler küçük harfe çevrildi.**
 - **Özel karakterler ve sayılar kaldırıldı.**
@@ -54,17 +54,17 @@ def clean_text(text):
 cleaned_headlines = [clean_text(headline) for headline in headlines]
 df = pd.DataFrame(cleaned_headlines, columns=["Headline"])
 df.to_csv("bbc_tech_headlines.csv", index=False)
+```
 
 
-
-**3. Makine Öğrenmesi Modelleri:**
+### 3. Makine Öğrenmesi Modelleri:
 Veriler, TfidfVectorizer ile sayısal vektörlere dönüştürüldü ve üç farklı model eğitildi:
 
-Naive Bayes (MultinomialNB)
-Lojistik Regresyon (LogisticRegression)
-Random Forest (RandomForestClassifier)
-Kod Örneği:
+**Naive Bayes (MultinomialNB)**
+**Lojistik Regresyon (LogisticRegression)**
+**Random Forest (RandomForestClassifier)**
 
+```
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(cleaned_headlines)
 
@@ -80,7 +80,7 @@ for name, model in models.items():
     accuracy = accuracy_score(y_test, y_pred)
     print(f"{name} Model Accuracy: {accuracy:.4f}")
     print(classification_report(y_test, y_pred))
-
+```
 
 4. Sonuçları Karşılaştırma ve Görselleştirme:
 Model doğrulukları karşılaştırıldı ve Confusion Matrix görselleştirildi.
