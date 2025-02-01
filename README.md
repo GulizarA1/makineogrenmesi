@@ -38,7 +38,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 headlines = [headline.text.strip() for headline in soup.find_all("h3")]
 
 
-### **2. Veri Temizleme**  
+**2. Veri Temizleme**  
 Kazınan veriler, aşağıdaki işlemlerle temizlendi:
 - **Metinler küçük harfe çevrildi.**
 - **Özel karakterler ve sayılar kaldırıldı.**
@@ -57,7 +57,7 @@ df.to_csv("bbc_tech_headlines.csv", index=False)
 
 
 
-3. Makine Öğrenmesi Modelleri:
+**3. Makine Öğrenmesi Modelleri:**
 Veriler, TfidfVectorizer ile sayısal vektörlere dönüştürüldü ve üç farklı model eğitildi:
 
 Naive Bayes (MultinomialNB)
