@@ -29,8 +29,7 @@ Bu proje, BBC News web sitesinin teknoloji haberlerinden **veri kazıma (web scr
 #### 1. Veri Kazıma:
 BBC News web sitesinden haber başlıkları kazındı. Veriler, **BeautifulSoup** kütüphanesi ile HTML sayfalardan çıkarıldı.
 
-**Kod Örneği:**
-```python
+```
 URL = "https://www.bbc.com/news/technology"
 headers = {"User-Agent": "Mozilla/5.0"}
 response = requests.get(URL, headers=headers)
@@ -38,7 +37,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 headlines = [headline.text.strip() for headline in soup.find_all("h3")]
 ```
 
-### 2. Veri Temizleme
+#### 2. Veri Temizleme
 Kazınan veriler, aşağıdaki işlemlerle temizlendi:
 - **Metinler küçük harfe çevrildi.**
 - **Özel karakterler ve sayılar kaldırıldı.**
@@ -57,7 +56,7 @@ df.to_csv("bbc_tech_headlines.csv", index=False)
 ```
 
 
-### 3. Makine Öğrenmesi Modelleri:
+#### 3. Makine Öğrenmesi Modelleri:
 Veriler, TfidfVectorizer ile sayısal vektörlere dönüştürüldü ve üç farklı model eğitildi:
 
 **Naive Bayes (MultinomialNB)**
@@ -82,11 +81,10 @@ for name, model in models.items():
     print(classification_report(y_test, y_pred))
 ```
 
-4. Sonuçları Karşılaştırma ve Görselleştirme:
+#### 4. Sonuçları Karşılaştırma ve Görselleştirme:
 Model doğrulukları karşılaştırıldı ve Confusion Matrix görselleştirildi.
 
-Kod Örneği:
-
+```
 plt.figure(figsize=(8, 5))
 plt.bar(results.keys(), results.values(), color=["blue", "green", "red"])
 plt.xlabel("Model")
@@ -94,27 +92,30 @@ plt.ylabel("Doğruluk Oranı")
 plt.title("Farklı Makine Öğrenmesi Modellerinin Karşılaştırılması")
 plt.show()
 
+```
 
-5. Sonuçlar:
-Projede elde edilen makine öğrenmesi modellerinin performans sonuçları model_performance.csv ve model_comparison.pdf dosyalarında sunulmuştur. En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
-
-6. Kullanım:
- 1.Depoyu klonlayın:
-    git clone https://github.com/yourusername/your-repository.git
- 2.Gereksinimleri yükleyin:
-    pip install -r requirements.txt
- 3.Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:
-    python scripts/scrape_data.py
- 4.Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:
-    python scripts/model.py
+#### 5. Sonuçlar:
+Projede elde edilen makine öğrenmesi modellerinin performans sonuçları model_performance.csv ve model_comparison.pdf dosyalarında sunulmuştur. 
+En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
 
 
-7.Video Açıklama:
+#### 6. Kullanım:
+ **1.Depoyu klonlayın:**
+   ``` git clone https://github.com/yourusername/your-repository.git```
+ **2.Gereksinimleri yükleyin:**
+    ```pip install -r requirements.txt```
+ **3.Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:**
+    ```python scripts/scrape_data.py```
+ **4.Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:**
+    ```python scripts/model.py```
+
+
+#### 7.Video Açıklama:
 Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz:
-[Video Açıklama Linki]
+**[Video Açıklama Linki]**
 
-Lisans:
-Bu proje MIT Lisansı altında lisanslanmıştır.
+## Lisans:
+**Bu proje MIT Lisansı altında lisanslanmıştır.**
 
 
 
