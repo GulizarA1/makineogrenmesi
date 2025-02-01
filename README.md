@@ -111,18 +111,21 @@ En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
    ``` 
    git clone https://github.com/yourusername/your-repository.git
    ```
-   
+
  **2.Gereksinimleri yükleyin:**
+ 
     ```
     pip install -r requirements.txt
     ```
     
  **3.Veri kazıma işlemi için scrape_data.py dosyasını çalıştırın:**
+ 
     ```
     python scripts/scrape_data.py
     ```
     
  **4.Makine öğrenmesi modellerini çalıştırmak için model.py dosyasını çalıştırın:**
+ 
     ```
     python scripts/model.py
     ```
@@ -137,6 +140,12 @@ Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladı�
 
 ## Lisans:
 **Bu proje MIT Lisansı altında lisanslanmıştır.**
+
+
+
+![Makine Öğrenmesi](https://github.com/user-attachments/assets/12448737-b2b1-4fdf-8d46-a244e27a382b)
+
+![Makine Öğrenmesi 2](https://github.com/user-attachments/assets/6a8fc698-e1c9-437c-bd4d-831e3e38dbcd)
 
 
 
