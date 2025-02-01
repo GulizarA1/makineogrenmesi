@@ -98,6 +98,31 @@ plt.show()
 
 ```
 
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+import numpy as np
+
+# Model tahminlerini ve doğru etiketleri al
+y_true = [0, 1, 0, 1]  # Gerçek etiketler
+y_pred = [0, 1, 0, 1]  # Tahmin edilen etiketler
+
+# Confusion Matrix
+cm = confusion_matrix(y_true, y_pred)
+
+# Görselleştirme
+plt.figure(figsize=(8, 5))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Class 0', 'Class 1'], yticklabels=['Class 0', 'Class 1'])
+plt.title('Confusion Matrix')
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.show()
+```
+
+
+
 #### 5. Sonuçlar:
 
 Projede elde edilen makine öğrenmesi modellerinin performans sonuçları model_performance.csv ve model_comparison.pdf dosyalarında sunulmuştur. 
@@ -127,7 +152,6 @@ En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
     python scripts/model.py
     ```
 
-
 #### 7.Video Açıklama:
 
 Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz:
@@ -146,6 +170,11 @@ Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladı�
 
 
 ![Makine Öğrenmesi 2](https://github.com/user-attachments/assets/6a8fc698-e1c9-437c-bd4d-831e3e38dbcd)
+
+
+
+![Confusion Matrix Görseli](https://github.com/user-attachments/assets/7f18650c-4cc2-4ef6-b804-83d2755f07b2)
+
 
 
 
