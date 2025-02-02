@@ -156,7 +156,7 @@ En iyi model, en yüksek doğruluğa sahip olan Random Forest modelidir.
 
 Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladığım 3 dakikalık video açıklamasına aşağıdaki bağlantıdan erişebilirsiniz:
 
-**[Video Açıklama Linki]**
+**[[Video Açıklama Linki](https://youtu.be/ba4wJUSvjJc)]**
 
 
 ## Lisans:
@@ -174,6 +174,10 @@ Proje hakkında detaylı açıklamalar ve sonuçların izahı için hazırladı�
 
 
 ![Confusion Matrix Görseli](https://github.com/user-attachments/assets/7f18650c-4cc2-4ef6-b804-83d2755f07b2)
+
+
+![makinesonuçları](https://github.com/user-attachments/assets/a5c5e2d8-ef46-455d-8422-56f63f4c8fa7)
+
 
 
 
